@@ -6,7 +6,7 @@ function Hero() {
       <div className="mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-prose text-center">
           <h1 className="text-4xl font-bold text-sky-300 sm:text-5xl dark:text-white">
-            Understand user flow and
+            Diagrams and tools
             <strong className="text-sky-300"> increase </strong>
             conversions
           </h1>
