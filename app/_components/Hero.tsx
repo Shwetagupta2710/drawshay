@@ -7,7 +7,7 @@ function Hero() {
         <div className="mx-auto max-w-prose text-center">
           <h1 className="text-4xl font-bold text-sky-300 sm:text-5xl dark:text-white">
             Diagrams and tools
-            <strong className="text-sky-300"> increase </strong>
+            <strong className="text-sky-300"> for </strong>
             conversions
           </h1>
 
