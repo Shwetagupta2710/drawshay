@@ -4,9 +4,6 @@ import React, { useEffect, useState } from "react";
 import {
   Popover,
   PopoverContent,
-  PopoverDescription,
-  PopoverHeader,
-  PopoverTitle,
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
@@ -21,7 +18,7 @@ export interface TEAM {
   teamName: String;
   _id: String;
 }
-function SideNavTopSection({ user }: any) {
+function SideNavTopSection({ user, setActiveTeamInfo }: any) {
   const menu = [
     {
       id: 1,
@@ -44,6 +41,9 @@ function SideNavTopSection({ user }: any) {
     user && getTeamList();
   }, [user]);
 
+  useEffect(() => {
+    activeTeam ? setActiveTeamInfo(activeTeam) : null;
+  }, [activeTeam]);
   const getTeamList = async () => {
     const result = await convex.query(api.teams.getTeam, {
       email: user?.email,
@@ -52,24 +52,28 @@ function SideNavTopSection({ user }: any) {
     setTeamList(result);
     setActiveTeam(result[0]);
   };
+
   const onMenuClick = (item: any) => {
     if (item.path) {
       router.push(item.path);
     }
   };
-
   return (
     <div>
       <Popover>
         <PopoverTrigger>
           <div
             className="flex items-center gap-3
-        hover:bg-slate-200 p-3 rounded-lg cursor-pointer"
+      hover:bg-slate-200 p-3 rounded-lg
+      cursor-pointer
+      "
           >
             <Image src="/logo-1.svg" alt="logo" width={40} height={40} />
             <h2
-              className="flex gap-2 items-center
-          font-bold text-[17px]"
+              className="flex gap-2 
+                    items-center
+      font-bold text-[17px]
+      "
             >
               {activeTeam?.teamName}
               <ChevronDown />
@@ -77,6 +81,7 @@ function SideNavTopSection({ user }: any) {
           </div>
         </PopoverTrigger>
         <PopoverContent className="ml-7 p-4">
+          {/* Team Section  */}
           <div>
             {teamList?.map((team, index) => (
               <h2
@@ -92,6 +97,7 @@ function SideNavTopSection({ user }: any) {
             ))}
           </div>
           <Separator className="mt-2 bg-slate-100" />
+          {/* Option Section  */}
           <div>
             {menu.map((item, index) => (
               <h2
@@ -115,7 +121,7 @@ function SideNavTopSection({ user }: any) {
             </LogoutLink>
           </div>
           <Separator className="mt-2 bg-slate-100" />
-          {/* user info section */}
+          {/* User Info Section  */}
           {user && (
             <div className="mt-2 flex gap-2 items-center">
               <Image
@@ -127,8 +133,7 @@ function SideNavTopSection({ user }: any) {
               />
               <div>
                 <h2 className="text-[14px] font-bold">
-                  {user?.given_name}
-                  {user?.family_name}
+                  {user?.given_name} {user?.family_name}
                 </h2>
                 <h2 className="text-[12px] text-gray-500">{user?.email}</h2>
               </div>
@@ -136,7 +141,8 @@ function SideNavTopSection({ user }: any) {
           )}
         </PopoverContent>
       </Popover>
-      {/* all file button */}
+
+      {/* All File Button  */}
       <Button
         variant="outline"
         className="w-full justify-start
