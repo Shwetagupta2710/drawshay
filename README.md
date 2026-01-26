@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DrawShay ✨  
+**A collaborative document editor + whiteboard SaaS built with Next.js and Convex**
 
-## Getting Started
+DrawShay is a full-stack SaaS application that allows users to **create teams, manage files, write documents, and draw on a whiteboard — all on the same screen**.  
+It is designed to demonstrate real-world product engineering, database design, and scalable frontend architecture.
 
-First, run the development server:
+This project was built to deeply understand **Convex database**, SaaS patterns, and production-ready app deployment.
+
+---
+
+## 🚀 Live Demo
+👉 _Add your deployed URL here_
+
+---
+
+## 🎯 Why DrawShay?
+Most tutorials stop at CRUD. DrawShay goes further:
+
+- Real-time document editing
+- Canvas/whiteboard integration
+- Team & file management
+- Free vs Paid plan control
+- Production deployment with Convex + Vercel
+
+This is not a demo app — it’s a **real SaaS-style product**.
+
+---
+
+## ✨ Key Features
+
+### 🧑‍🤝‍🧑 Team & File Management
+- Create multiple teams
+- Create, organize, and manage files inside teams
+- Track total files with a progress bar
+
+### 📝 Document + 🎨 Whiteboard (Same Screen)
+- Write rich text documents using **Editor.js**
+- Draw freely on a **whiteboard (Excalidraw)**
+- Save and retrieve both document & canvas data
+- Seamless switching between writing and drawing
+
+### 🧠 Convex Database (Core Learning)
+- Convex queries & mutations
+- Alternate query strategies
+- Separate dev and production environments
+- Real-time, serverless backend
+
+### 🔐 Authentication & Security
+- Authentication using **Kinde**
+- Protected routes
+- Secure access to teams and files
+
+### 💳 SaaS Concepts
+- Free plan vs Paid plan logic
+- Upgrade UI (Pricing section)
+- Feature gating based on plan
+
+### 📦 Scale & Polish
+- 50+ document features
+- 30+ whiteboard tools
+- Clean UI with Radix + Tailwind
+- Production-ready deployment
+
+---
+
+## 🧱 Tech Stack
+
+### Frontend
+- **Next.js 14**
+- **React 18**
+- **TypeScript**
+- **Tailwind CSS**
+- **Radix UI**
+- **Editor.js**
+- **Excalidraw**
+
+### Backend
+- **Convex (Database + Backend)**
+- Queries & Mutations
+- Real-time data handling
+
+### Auth
+- **Kinde Auth**
+
+### Deployment
+- **Vercel**
+- **Convex Cloud**
+
+---
+
+## 🛠️ Installation & Setup
 
 ```bash
+git clone https://github.com/your-username/drawshay.git
+cd drawshay
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
