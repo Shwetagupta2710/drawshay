@@ -66,14 +66,14 @@ function Editor({
 
       tools: {
         header: {
-          class: Header,
+          class: Header as any,
           shortcut: "CMD+SHIFT+H",
           config: {
             placeholder: "Enter a Header",
           },
         },
         list: {
-          class: List,
+          class: List as any,
           inlineToolbar: true,
           config: {
             defaultStyle: "unordered",
